@@ -42,6 +42,9 @@
 html{scroll-behavior:smooth}
 body{
   margin:0;
+  line-break:strict;
+  word-break:normal;
+  overflow-wrap:normal;
   padding-bottom:88px;
   color:var(--text);
   background:var(--outer);
@@ -53,6 +56,7 @@ body{
 img{display:block;width:100%}
 #phone{
   position:relative;
+  container-type:inline-size;
   width:100%;max-width:var(--phone);
   margin-inline:auto;
   background:var(--bg);
@@ -64,6 +68,8 @@ button{font:inherit}
 .container{width:calc(100% - 32px);max-width:var(--max);margin-inline:auto}
 .serif{font-family:"Yu Mincho","Hiragino Mincho ProN","Times New Roman",serif}
 .section{position:relative;padding:78px 0}
+h1,h2,h3,.title,.case-title,.doctor-name,.reason h3,.bridge h3,.inline-cta h3,.method-title,.price-name{text-wrap:balance}
+p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 .kicker{
   display:flex;align-items:center;gap:10px;
   margin:0 0 16px;
@@ -74,9 +80,10 @@ button{font:inherit}
 .title{
   margin:0;
   font-family:"Yu Mincho","Hiragino Mincho ProN","Times New Roman",serif;
-  font-size:clamp(34px,10vw,48px);
+  font-size:clamp(23px,8.1cqw,39px);
   font-weight:500;
   line-height:1.42;
+  text-wrap:balance;
   letter-spacing:.01em;
 }
 .lead{
@@ -117,10 +124,6 @@ button{font:inherit}
   overflow:hidden;border-radius:0 0 0 44vw;
 }
 .hero-photo{height:100%;object-fit:cover;object-position:52% 8%;filter:saturate(.82) contrast(.98) brightness(1.04)}
-.hero-photo-wrap::after{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(90deg,rgba(12,20,37,.72),transparent 42%);
-}
 .hero-word{
   position:absolute;top:94px;left:-16px;z-index:1;
   writing-mode:vertical-rl;
@@ -131,7 +134,7 @@ button{font:inherit}
 .hero-panel{
   position:relative;width:100%;
   padding:28px 22px 22px;
-  background:rgba(14,24,42,.82);
+  background:rgba(13,22,39,.97);
   border:1px solid rgba(201,213,236,.12);
   border-radius:28px 28px 12px 12px;
   backdrop-filter:blur(18px);box-shadow:var(--shadow);
@@ -139,7 +142,7 @@ button{font:inherit}
 .hero-kicker{margin-bottom:9px;color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.16em}
 .hero h1{
   margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN","Times New Roman",serif;
-  font-size:clamp(39px,11vw,54px);font-weight:500;line-height:1.28;letter-spacing:-.02em;
+  font-size:clamp(30px,9.4cqw,46px);font-weight:500;line-height:1.28;letter-spacing:-.02em;text-wrap:balance;
 }
 .hero h1 em{color:var(--accent);font-style:normal}
 .hero-sub{margin:15px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
@@ -167,7 +170,7 @@ button{font:inherit}
 .case-image img{aspect-ratio:1/1;object-fit:cover}
 .case-caption{position:relative;width:calc(100% - 22px);margin:-22px 0 0 auto;padding:18px 18px 0;background:var(--bg-2)}
 .case-no{color:var(--accent);font-family:"Times New Roman",serif;font-size:11px;letter-spacing:.18em}
-.case-title{margin:4px 0 7px;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:22px;font-weight:500}
+.case-title{margin:4px 0 7px;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(18px,4.6cqw,22px);font-weight:500}
 .case-text{margin:0;color:var(--muted);font-size:12px}
 .case-risk{margin:8px 0 0;color:var(--faint);font-size:9px;line-height:1.55}
 
@@ -190,7 +193,7 @@ button{font:inherit}
 /* contents */
 .contents{background:linear-gradient(135deg,#101b2f 0%,#16243d 100%);color:var(--text)}
 .contents .kicker{color:var(--accent)}.contents .kicker::before{background:var(--hair)}
-.contents .title{font-size:31px}
+.contents .title{font-size:clamp(23px,6.5cqw,31px)}
 .contents-lead{margin:14px 0 0;color:var(--muted);font-size:12px}
 .contents-list{margin-top:28px;border-top:1px solid var(--line)}
 .contents-list a{
@@ -228,7 +231,7 @@ button{font:inherit}
 .reason{position:relative;padding:26px 0 24px 54px;border-top:1px solid var(--line)}
 .reason:last-child{border-bottom:1px solid var(--line)}
 .reason-num{position:absolute;left:0;top:25px;color:var(--accent);font-family:"Times New Roman",serif;font-size:25px}
-.reason h3{margin:0 0 8px;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:20px;font-weight:500;line-height:1.5}
+.reason h3{margin:0 0 8px;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(16px,4.2cqw,20px);font-weight:500;line-height:1.5}
 .reason p{margin:0;color:var(--muted);font-size:12px}
 
 /* treatment */
@@ -312,7 +315,7 @@ button{font:inherit}
 .price-list{margin-top:28px;border-top:1px solid var(--line)}
 .price-item{padding:20px 0 18px;border-bottom:1px solid var(--line)}
 .price-top{display:flex;justify-content:space-between;gap:18px;align-items:flex-start}
-.price-name{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:15px;line-height:1.55}
+.price-name{font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:15px;line-height:1.55;word-break:keep-all;overflow-wrap:anywhere}
 .price-value{flex:0 0 auto;color:var(--accent);font-family:"Times New Roman",serif;font-size:24px;line-height:1;white-space:nowrap}
 .price-value small{font-size:11px}
 .price-sub{margin-top:5px;color:var(--muted);font-size:9px}
@@ -323,7 +326,7 @@ button{font:inherit}
 .clinic{background:var(--navy);color:var(--text);overflow:hidden}
 .clinic::before{content:"FIRST";position:absolute;right:-20px;top:40px;color:rgba(233,238,248,.04);font-family:"Times New Roman",serif;font-size:112px}
 .clinic .kicker{color:var(--accent)}.clinic .kicker::before{background:var(--hair)}
-.philosophy h2{margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:35px;font-weight:500;line-height:1.55}
+.philosophy h2{margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(22px,7.3cqw,35px);font-weight:500;line-height:1.55}
 .philosophy p{margin:20px 0 0;color:var(--muted);font-size:13px}
 .clinic-info{margin-top:36px;border-top:1px solid var(--line)}
 .info-row{display:grid;grid-template-columns:84px 1fr;gap:12px;padding:14px 0;border-bottom:1px solid var(--line)}
@@ -338,7 +341,7 @@ button{font:inherit}
   color:var(--text);text-align:center;
 }
 .final-cta .kicker{justify-content:center;color:var(--accent)}.final-cta .kicker::before{display:none}
-.final-cta h2{margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:31px;font-weight:500;line-height:1.55}
+.final-cta h2{margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(20px,6cqw,29px);font-weight:500;line-height:1.55}
 .final-cta p{margin:12px auto 0;max-width:560px;color:var(--muted);font-size:12px}
 .final-button{
   position:relative;
