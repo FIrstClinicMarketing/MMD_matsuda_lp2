@@ -114,70 +114,49 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 
 /* hero */
 .hero{
-  position:relative;
-  padding:6px 0 92px;overflow:hidden;
+  position:relative;display:flex;flex-direction:column;justify-content:space-between;
+  min-height:calc(100svh - 58px);
+  padding:16px 0 104px;overflow:hidden;
   background:
-    radial-gradient(circle at 50% 0%,rgba(201,184,146,.12),transparent 42%),
-    linear-gradient(180deg,#152238 0%,#0c1425 100%);
+    radial-gradient(circle at 74% 26%,rgba(201,184,146,.16),transparent 52%),
+    linear-gradient(180deg,#16243c 0%,#0b1322 100%);
 }
-.fv{width:calc(100% - 32px);max-width:var(--max);margin-inline:auto}
-.fv-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
-.fv-tags span{
-  padding:5px 11px;border:1px solid rgba(201,184,146,.40);border-radius:999px;
-  color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.06em;
+.hero-photo{
+  position:absolute;inset:0;z-index:1;
+  width:100%;height:100%;
+  object-fit:cover;object-position:8% 50%;
+  filter:saturate(.94) contrast(1.02);
+  -webkit-mask-image:linear-gradient(180deg,#000 82%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 82%,transparent 100%);
 }
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(to top,rgba(11,19,34,.97) 18%,rgba(11,19,34,.62) 40%,rgba(11,19,34,0) 60%),
+    linear-gradient(180deg,rgba(11,19,34,.55) 0%,rgba(11,19,34,0) 16%);
+}
+.fv{position:relative;z-index:3;width:calc(100% - 32px);max-width:var(--max);margin-inline:auto}
+.fv-tag{margin:0;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.06em}
+.fv-badge{
+  display:inline-block;margin-top:11px;padding:8px 13px;
+  border:1px solid rgba(201,184,146,.55);
+  color:var(--text);font-size:11px;font-weight:700;line-height:1.5;letter-spacing:.04em;
+}
+.fv-badge b{display:block;color:var(--accent);font-family:"Times New Roman",serif;font-size:27px;font-weight:500;line-height:1.1}
+.fv-badge b small{font-size:13px;font-family:inherit}
 .fv-head{
-  margin:10px 0 0;text-align:center;
+  margin:0;
   font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
-  font-size:clamp(25px,7.2cqw,33px);font-weight:500;line-height:1.4;letter-spacing:.01em;text-wrap:balance;
+  font-size:clamp(30px,9.2cqw,44px);font-weight:500;line-height:1.42;letter-spacing:.01em;
+  text-shadow:0 2px 24px rgba(8,14,26,.85);
 }
 .fv-head em{font-style:normal;color:var(--accent)}
-.fv-lead{margin:8px 0 0;text-align:center;color:var(--muted);font-size:11.5px;line-height:1.75}
-.fv-case{
-  position:relative;margin-top:10px;border-radius:12px;overflow:hidden;
-  border:1px solid rgba(201,213,236,.12);
+.fv-sub{margin:13px 0 0;color:var(--muted);font-size:11.5px;line-height:1.75;text-shadow:0 2px 14px rgba(8,14,26,.8)}
+.fv-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.fv-meta span{
+  padding:5px 10px;border:1px solid var(--line);border-radius:999px;
+  color:var(--muted);font-size:9.5px;letter-spacing:.04em;background:rgba(11,19,34,.5);
 }
-.fv-case img{aspect-ratio:3/2;max-height:27svh;object-fit:cover;object-position:50% 42%}
-.fv-case b{
-  position:absolute;left:8px;top:8px;
-  padding:4px 9px;border-radius:999px;background:rgba(10,18,32,.72);
-  color:var(--text);font-size:9px;font-weight:700;letter-spacing:.08em;backdrop-filter:blur(6px);
-}
-.fv-case u{
-  display:block;padding:6px 10px;text-decoration:none;
-  background:rgba(10,18,32,.55);color:var(--faint);font-size:8.5px;line-height:1.5;
-}
-.fv-stats{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
-.fv-stats div{padding:8px 4px;border-right:1px solid var(--line)}
-.fv-stats div:last-child{border-right:0}
-.fv-stats strong{display:block;color:var(--accent);font-family:"Times New Roman",serif;font-size:20px;font-weight:500;line-height:1}
-.fv-stats span{display:block;margin-top:4px;color:var(--muted);font-size:8.5px}
-.fv-price{
-  display:flex;align-items:center;gap:10px;
-  margin-top:10px;padding:9px 13px;
-  border:1px solid rgba(201,184,146,.32);border-radius:12px;background:rgba(201,184,146,.07);
-}
-.fv-price b{
-  flex:0 0 auto;padding:5px 7px;border-radius:7px;background:rgba(201,184,146,.16);
-  color:var(--accent);font-size:9px;font-weight:700;line-height:1.4;text-align:center;
-}
-.fv-price i{display:block;font-style:normal;color:var(--text);font-size:11px}
-.fv-price em{display:block;font-style:normal;color:var(--accent);font-family:"Times New Roman",serif;font-size:23px;line-height:1.15}
-.fv-price em small{font-size:10px}
-.fv-cta{
-  position:relative;overflow:hidden;
-  min-height:54px;display:flex;align-items:center;justify-content:center;gap:9px;
-  margin-top:11px;border-radius:999px;
-  color:var(--navy);background:var(--ivory);
-  border:1px solid rgba(201,184,146,.50);box-shadow:0 14px 30px rgba(0,0,0,.40);
-  font-size:15px;font-weight:800;letter-spacing:.04em;
-}
-.fv-cta::before{
-  content:"";position:absolute;inset:0;
-  background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.75) 50%,transparent 80%);
-  transform:translateX(-120%);animation:ctaShine 4.8s ease-in-out infinite;
-}
-.fv-cta small{font-size:10px;font-weight:600;opacity:.72}
 
 /* cases */
 .cases{background:var(--bg-2)}
@@ -191,7 +170,8 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 .case-no{color:var(--accent);font-family:"Times New Roman",serif;font-size:11px;letter-spacing:.18em}
 .case-title{margin:4px 0 7px;font-family:"Yu Mincho","Hiragino Mincho ProN",serif;font-size:clamp(18px,4.6cqw,22px);font-weight:500}
 .case-text{margin:0;color:var(--muted);font-size:12px}
-.case-risk{margin:8px 0 0;color:var(--faint);font-size:9px;line-height:1.55}
+.case-meta{margin:7px 0 0;color:var(--accent);font-size:10px;letter-spacing:.02em}
+.case-risk{margin:7px 0 0;color:var(--faint);font-size:9px;line-height:1.55}
 
 /* story bridge */
 .bridge{
@@ -452,28 +432,17 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 </header>
 
 <section class="hero" id="top">
+  <img class="hero-photo" src="source/doctor_matsuda_cut.webp" alt="クマ取り名医 松田裕太医師" width="848" height="1235">
   <div class="fv">
-    <div class="fv-tags"><span>クマ取り名医 松田 裕太</span><span>First Clinic 共同代表</span></div>
-    <h2 class="fv-head">涙袋を残したまま、<br><em>目の下の影</em>を整える。</h2>
-    <p class="fv-lead">脱脂・裏ハムラ・脂肪注入を、原因に合わせて使い分けます。</p>
-    <div class="fv-case">
-      <img src="source/case01.webp" alt="クマ取り＋涙袋形成の症例（左：施術前／右：施術後）">
-      <b>BEFORE → AFTER</b>
-      <u>切らない目の下のたるみ取り＋脂肪注入＋涙袋形成／腫れ・内出血・しこり・左右差などのリスクがあります。経過には個人差があります。</u>
+    <p class="fv-tag">#クマ取り名医 松田 裕太</p>
+    <div class="fv-badge">クマ取り 通算執刀<b>2,000<small>件以上</small></b></div>
+  </div>
+  <div class="fv">
+    <h2 class="fv-head">涙袋を残して、<br><em>目の下の影</em>を<br>整える。</h2>
+    <p class="fv-sub">脱脂・裏ハムラ・脂肪注入を、原因に合わせて使い分けます。</p>
+    <div class="fv-meta">
+      <span>First Clinic 共同代表</span><span>年間クマ取り執刀 500件以上</span><span>六本木駅 徒歩1分</span>
     </div>
-    <div class="fv-stats">
-      <div><strong>2,000+</strong><span>クマ取り通算執刀</span></div>
-      <div><strong>500+</strong><span>年間クマ取り執刀</span></div>
-      <div><strong>No.1</strong><span>関東地区実績</span></div>
-    </div>
-    <div class="fv-price">
-      <b>モニター<br>価格</b>
-      <div>
-        <i>切らない目の下のたるみ取り</i>
-        <em><small>¥</small>145,200<small> 税込・麻酔代込</small></em>
-      </div>
-    </div>
-    <a class="fv-cta" href="https://firstclinic-tokyo.b4a.clinic/clinics/925/bookings/new/select/menu/?largeCategoryId=1574" target="_blank" rel="noopener">無料カウンセリングを予約 <small>24時間WEB予約</small></a>
   </div>
 </section>
 
@@ -492,6 +461,7 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
           <div class="case-no">CASE 01</div>
           <h3 class="case-title">クマ取り＋涙袋形成</h3>
           <p class="case-text">切らない目の下のたるみ取り＋脂肪注入（コンデンス・ナノ）＋涙袋形成</p>
+          <p class="case-meta">執刀医：松田 裕太 医師 ／ 料金：¥145,200〜（税込）</p>
           <p class="case-risk">腫れ、内出血、しこり、左右差などのリスクがあります。経過には個人差があります。</p>
         </div>
       </article>
@@ -500,7 +470,8 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
         <div class="case-caption">
           <div class="case-no">CASE 02</div>
           <h3 class="case-title">裏ハムラ＋ナノファット</h3>
-          <p class="case-text">膨らみと凹みを同時に整え、目元から頬へ自然につながるラインに。</p>
+          <p class="case-text">裏ハムラ＋ナノファット。膨らみと凹みを同時に整え、目元から頬へ自然につながるラインに。</p>
+          <p class="case-meta">執刀医：松田 裕太 医師 ／ 料金：¥345,000〜（税込・静脈麻酔代別）</p>
           <p class="case-risk">腫れ、内出血、拘縮、凹凸、左右差などのリスクがあります。経過には個人差があります。</p>
         </div>
       </article>
