@@ -114,44 +114,75 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 
 /* hero */
 .hero{
-  position:relative;display:flex;flex-direction:column;
-  min-height:calc(100svh - 62px);overflow:hidden;
-  background:linear-gradient(180deg,#152238 0%,#0c1425 100%);
+  position:relative;
+  padding:6px 0 92px;overflow:hidden;
+  background:
+    radial-gradient(circle at 50% 0%,rgba(201,184,146,.12),transparent 42%),
+    linear-gradient(180deg,#152238 0%,#0c1425 100%);
 }
-.hero-figure{position:relative;flex:1 1 0;min-height:250px}
-.hero-figure::before{
-  content:"";position:absolute;left:50%;top:6%;width:88%;aspect-ratio:1;
-  transform:translateX(-50%);border-radius:50%;
-  background:radial-gradient(circle,rgba(201,184,146,.17) 0%,rgba(201,184,146,.05) 46%,transparent 70%);
+.fv{width:calc(100% - 32px);max-width:var(--max);margin-inline:auto}
+.fv-tags{display:flex;flex-wrap:wrap;justify-content:center;gap:6px}
+.fv-tags span{
+  padding:5px 11px;border:1px solid rgba(201,184,146,.40);border-radius:999px;
+  color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.06em;
 }
-.hero-photo{
-  position:absolute;inset:0;width:100%;height:100%;
-  object-fit:contain;object-position:50% 100%;
-  filter:saturate(.92) contrast(1.02);
-  -webkit-mask-image:linear-gradient(180deg,#000 74%,transparent 100%);
-  mask-image:linear-gradient(180deg,#000 74%,transparent 100%);
-}
-.hero-body{flex:0 0 auto;padding:20px 0 96px}
-.hero-eyebrow{margin:0;color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.16em}
-.hero-name{
-  margin:9px 0 0;display:flex;align-items:baseline;gap:12px;
+.fv-head{
+  margin:10px 0 0;text-align:center;
   font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
-  font-size:clamp(23px,6.6cqw,30px);font-weight:500;line-height:1.1;
+  font-size:clamp(25px,7.2cqw,33px);font-weight:500;line-height:1.4;letter-spacing:.01em;text-wrap:balance;
 }
-.hero-name span{color:var(--muted);font-family:"Times New Roman",serif;font-size:9px;letter-spacing:.22em}
-.hero h1{
-  margin:14px 0 0;font-family:"Yu Mincho","Hiragino Mincho ProN","Times New Roman",serif;
-  font-size:clamp(30px,9.4cqw,46px);font-weight:500;line-height:1.28;letter-spacing:-.02em;text-wrap:balance;
+.fv-head em{font-style:normal;color:var(--accent)}
+.fv-lead{margin:8px 0 0;text-align:center;color:var(--muted);font-size:11.5px;line-height:1.75}
+.fv-case{
+  position:relative;margin-top:10px;border-radius:12px;overflow:hidden;
+  border:1px solid rgba(201,213,236,.12);
 }
-.hero-sub{margin:13px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
-.hero-meta{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.hero-meta div{padding:12px 8px 11px 0;border-right:1px solid var(--line)}
-.hero-meta div:nth-child(2),.hero-meta div:last-child{padding-left:8px}
-.hero-meta div:last-child{border-right:0}
-.hero-meta strong{display:block;color:var(--accent);font-family:"Times New Roman",serif;font-size:22px;line-height:1;font-weight:500}
-.hero-meta span{display:block;margin-top:5px;color:var(--muted);font-size:8px;line-height:1.45}
-.hero-address{display:flex;align-items:center;gap:8px;margin-top:14px;color:var(--muted);font-size:10px}
-.hero-address::before{content:"";flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(201,184,146,.18)}
+.fv-case img{aspect-ratio:16/9;max-height:23svh;object-fit:cover;object-position:50% 42%}
+.fv-case b{
+  position:absolute;left:8px;top:8px;
+  padding:4px 9px;border-radius:999px;background:rgba(10,18,32,.72);
+  color:var(--text);font-size:9px;font-weight:700;letter-spacing:.08em;backdrop-filter:blur(6px);
+}
+.fv-case u{
+  display:block;padding:6px 10px;text-decoration:none;
+  background:rgba(10,18,32,.55);color:var(--faint);font-size:8.5px;line-height:1.5;
+}
+.fv-stats{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:12px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);text-align:center}
+.fv-stats div{padding:8px 4px;border-right:1px solid var(--line)}
+.fv-stats div:last-child{border-right:0}
+.fv-stats strong{display:block;color:var(--accent);font-family:"Times New Roman",serif;font-size:20px;font-weight:500;line-height:1}
+.fv-stats span{display:block;margin-top:4px;color:var(--muted);font-size:8.5px}
+.fv-price{
+  display:flex;align-items:center;gap:10px;
+  margin-top:10px;padding:9px 13px;
+  border:1px solid rgba(201,184,146,.32);border-radius:12px;background:rgba(201,184,146,.07);
+}
+.fv-price b{
+  flex:0 0 auto;padding:5px 7px;border-radius:7px;background:rgba(201,184,146,.16);
+  color:var(--accent);font-size:9px;font-weight:700;line-height:1.4;text-align:center;
+}
+.fv-price i{display:block;font-style:normal;color:var(--text);font-size:11px}
+.fv-price em{display:block;font-style:normal;color:var(--accent);font-family:"Times New Roman",serif;font-size:23px;line-height:1.15}
+.fv-price em small{font-size:10px}
+.fv-cta{
+  position:relative;overflow:hidden;
+  min-height:54px;display:flex;align-items:center;justify-content:center;gap:9px;
+  margin-top:11px;border-radius:999px;
+  color:var(--navy);background:var(--ivory);
+  border:1px solid rgba(201,184,146,.50);box-shadow:0 14px 30px rgba(0,0,0,.40);
+  font-size:15px;font-weight:800;letter-spacing:.04em;
+}
+.fv-cta::before{
+  content:"";position:absolute;inset:0;
+  background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.75) 50%,transparent 80%);
+  transform:translateX(-120%);animation:ctaShine 4.8s ease-in-out infinite;
+}
+.fv-cta small{font-size:10px;font-weight:600;opacity:.72}
+.fv-line{
+  min-height:44px;display:flex;align-items:center;justify-content:center;
+  margin-top:7px;border-radius:999px;
+  color:#fff;background:#06C755;font-size:13px;font-weight:800;
+}
 
 /* cases */
 .cases{background:var(--bg-2)}
@@ -426,22 +457,29 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 </header>
 
 <section class="hero" id="top">
-  <div class="hero-figure">
-    <img class="hero-photo" src="source/doctor_matsuda_cut.webp" alt="クマ取り名医 松田裕太医師" width="848" height="1235">
-  </div>
-  <div class="hero-body">
-    <div class="container">
-      <p class="hero-eyebrow">クマ取り名医 ／ FIRST CLINIC 共同代表</p>
-      <p class="hero-name">松田 裕太<span>YUTA MATSUDA</span></p>
-      <h1>目元の印象を、<br>端正に、美しく。</h1>
-      <p class="hero-sub">クマをただ「取る」のではなく、涙袋から頬まで。表情を損なわない目元を設計します。</p>
-      <div class="hero-meta">
-        <div><strong>2,000+</strong><span>クマ取り<br>通算執刀</span></div>
-        <div><strong>500+</strong><span>年間<br>クマ取り執刀</span></div>
-        <div><strong>No.1</strong><span>大手美容外科<br>関東地区実績</span></div>
-      </div>
-      <div class="hero-address">六本木駅 徒歩1分 ／ 無料カウンセリング・24時間WEB予約</div>
+  <div class="fv">
+    <div class="fv-tags"><span>クマ取り名医 松田 裕太</span><span>First Clinic 共同代表</span></div>
+    <h2 class="fv-head">涙袋を残したまま、<br><em>目の下の影</em>を整える。</h2>
+    <p class="fv-lead">脱脂・裏ハムラ・脂肪注入を、原因に合わせて使い分けます。</p>
+    <div class="fv-case">
+      <img src="source/case01.webp" alt="クマ取り＋涙袋形成の症例（左：施術前／右：施術後）">
+      <b>BEFORE → AFTER</b>
+      <u>切らない目の下のたるみ取り＋脂肪注入＋涙袋形成／腫れ・内出血・しこり・左右差などのリスクがあります。経過には個人差があります。</u>
     </div>
+    <div class="fv-stats">
+      <div><strong>2,000+</strong><span>クマ取り通算執刀</span></div>
+      <div><strong>500+</strong><span>年間クマ取り執刀</span></div>
+      <div><strong>No.1</strong><span>関東地区実績</span></div>
+    </div>
+    <div class="fv-price">
+      <b>モニター<br>価格</b>
+      <div>
+        <i>切らない目の下のたるみ取り</i>
+        <em><small>¥</small>145,200<small> 税込・麻酔代込</small></em>
+      </div>
+    </div>
+    <a class="fv-cta" href="https://firstclinic-tokyo.b4a.clinic/clinics/925/bookings/new/select/menu/?largeCategoryId=1574" target="_blank" rel="noopener">無料カウンセリングを予約 <small>24時間WEB予約</small></a>
+    <a class="fv-line" href="https://line.me/R/ti/p/@646gomgz?ts=02010033&amp;oat_content=url" target="_blank" rel="noopener">LINEで相談する</a>
   </div>
 </section>
 
