@@ -106,59 +106,52 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 .reveal.in{opacity:1;transform:none}
 
 /* top */
-.topbar{position:absolute;inset:0 0 auto;z-index:20;padding:18px 0;color:var(--text)}
+.topbar{position:relative;z-index:20;padding:15px 0;color:var(--text)}
 .topbar-inner{display:flex;align-items:center;justify-content:space-between}
 .brand{display:flex;align-items:center;gap:10px;font-size:10px;font-weight:800;letter-spacing:.18em}
 .brand-mark{width:28px;height:28px;display:grid;place-items:center;border:1px solid rgba(201,213,236,.30);border-radius:50%;font-family:"Times New Roman",serif}
-.top-location{display:none;font-size:11px;letter-spacing:.08em}
+.top-location{color:var(--muted);font-size:9px;letter-spacing:.14em}
 
 /* hero */
 .hero{
-  position:relative;min-height:100svh;overflow:hidden;
-  background:
-    radial-gradient(circle at 80% 12%,rgba(201,184,146,.12),transparent 30%),
-    linear-gradient(180deg,#152238 0%,#0c1425 100%);
+  position:relative;display:flex;flex-direction:column;
+  min-height:calc(100svh - 62px);overflow:hidden;
+  background:linear-gradient(180deg,#152238 0%,#0c1425 100%);
 }
-.hero-photo-wrap{
-  position:absolute;top:62px;right:-9%;z-index:2;width:86%;height:62svh;min-height:455px;
-  overflow:hidden;border-radius:0 0 0 44vw;
+.hero-figure{position:relative;flex:1 1 0;min-height:250px}
+.hero-figure::before{
+  content:"";position:absolute;left:50%;top:6%;width:88%;aspect-ratio:1;
+  transform:translateX(-50%);border-radius:50%;
+  background:radial-gradient(circle,rgba(201,184,146,.17) 0%,rgba(201,184,146,.05) 46%,transparent 70%);
 }
-.hero-photo{height:100%;object-fit:cover;object-position:52% 8%;filter:saturate(.82) contrast(.98) brightness(1.04)}
-.hero-word{
-  position:absolute;top:94px;left:-16px;z-index:1;
-  writing-mode:vertical-rl;
-  color:rgba(233,238,248,.05);
-  font-family:"Times New Roman",serif;font-size:50px;letter-spacing:.12em;
+.hero-photo{
+  position:absolute;inset:0;width:100%;height:100%;
+  object-fit:contain;object-position:50% 100%;
+  filter:saturate(.92) contrast(1.02);
+  -webkit-mask-image:linear-gradient(180deg,#000 74%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 74%,transparent 100%);
 }
-.hero-content{position:relative;z-index:5;min-height:100svh;display:flex;align-items:flex-end;padding:430px 0 34px}
-.hero-panel{
-  position:relative;width:100%;
-  padding:28px 22px 22px;
-  background:rgba(13,22,39,.97);
-  border:1px solid rgba(201,213,236,.12);
-  border-radius:28px 28px 12px 12px;
-  backdrop-filter:blur(18px);box-shadow:var(--shadow);
+.hero-body{flex:0 0 auto;padding:20px 0 96px}
+.hero-eyebrow{margin:0;color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.16em}
+.hero-name{
+  margin:9px 0 0;display:flex;align-items:baseline;gap:12px;
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+  font-size:clamp(23px,6.6cqw,30px);font-weight:500;line-height:1.1;
 }
-.hero-kicker{margin-bottom:9px;color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.16em}
+.hero-name span{color:var(--muted);font-family:"Times New Roman",serif;font-size:9px;letter-spacing:.22em}
 .hero h1{
-  margin:0;font-family:"Yu Mincho","Hiragino Mincho ProN","Times New Roman",serif;
+  margin:14px 0 0;font-family:"Yu Mincho","Hiragino Mincho ProN","Times New Roman",serif;
   font-size:clamp(30px,9.4cqw,46px);font-weight:500;line-height:1.28;letter-spacing:-.02em;text-wrap:balance;
 }
-.hero h1 em{color:var(--accent);font-style:normal}
-.hero-sub{margin:15px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
-.hero-meta{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.hero-sub{margin:13px 0 0;color:var(--muted);font-size:13px;line-height:1.8}
+.hero-meta{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .hero-meta div{padding:12px 8px 11px 0;border-right:1px solid var(--line)}
 .hero-meta div:nth-child(2),.hero-meta div:last-child{padding-left:8px}
 .hero-meta div:last-child{border-right:0}
 .hero-meta strong{display:block;color:var(--accent);font-family:"Times New Roman",serif;font-size:22px;line-height:1;font-weight:500}
 .hero-meta span{display:block;margin-top:5px;color:var(--muted);font-size:8px;line-height:1.45}
 .hero-address{display:flex;align-items:center;gap:8px;margin-top:14px;color:var(--muted);font-size:10px}
-.hero-address::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(201,184,146,.18)}
-.hero-next{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-top:18px;padding-top:14px;border-top:1px solid var(--line);
-  color:var(--accent);font-size:10px;font-weight:700;letter-spacing:.05em;
-}
+.hero-address::before{content:"";flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 4px rgba(201,184,146,.18)}
 
 /* cases */
 .cases{background:var(--bg-2)}
@@ -433,24 +426,21 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 </header>
 
 <section class="hero" id="top">
-  <div class="hero-word">FIRST CLINIC</div>
-  <div class="hero-photo-wrap">
-    <img class="hero-photo" src="source/doctor_matsuda.webp" alt="松田裕太医師">
+  <div class="hero-figure">
+    <img class="hero-photo" src="source/doctor_matsuda_cut.webp" alt="クマ取り名医 松田裕太医師" width="848" height="1235">
   </div>
-  <div class="hero-content">
+  <div class="hero-body">
     <div class="container">
-      <div class="hero-panel reveal">
-        <div class="hero-kicker">FIRST CLINIC / YUTA MATSUDA</div>
-        <h1><em>目元の印象を、</em><br>端正に、美しく。</h1>
-        <p class="hero-sub">クマをただ「取る」のではなく、涙袋から頬まで。あなた本来の表情を損なわない、自然で端正な目元をデザインします。</p>
-        <div class="hero-meta">
-          <div><strong>2,000+</strong><span>クマ取り<br>通算執刀</span></div>
-          <div><strong>500+</strong><span>年間<br>クマ取り執刀</span></div>
-          <div><strong>No.1</strong><span>大手美容外科<br>関東地区実績</span></div>
-        </div>
-        <div class="hero-address">東京・六本木 / 六本木駅 徒歩圏</div>
-        <a class="hero-next" href="#cases"><span>まずは、仕上がりをご覧ください</span><span>↓</span></a>
+      <p class="hero-eyebrow">クマ取り名医 ／ FIRST CLINIC 共同代表</p>
+      <p class="hero-name">松田 裕太<span>YUTA MATSUDA</span></p>
+      <h1>目元の印象を、<br>端正に、美しく。</h1>
+      <p class="hero-sub">クマをただ「取る」のではなく、涙袋から頬まで。表情を損なわない目元を設計します。</p>
+      <div class="hero-meta">
+        <div><strong>2,000+</strong><span>クマ取り<br>通算執刀</span></div>
+        <div><strong>500+</strong><span>年間<br>クマ取り執刀</span></div>
+        <div><strong>No.1</strong><span>大手美容外科<br>関東地区実績</span></div>
       </div>
+      <div class="hero-address">六本木駅 徒歩1分 ／ 無料カウンセリング・24時間WEB予約</div>
     </div>
   </div>
 </section>
