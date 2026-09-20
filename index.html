@@ -123,12 +123,16 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
     linear-gradient(180deg,#16243c 0%,#0b1322 100%);
 }
 .hero-photo{
-  position:absolute;right:-6%;top:58px;z-index:1;
-  width:auto;height:44%;
-  object-fit:contain;object-position:100% 0;
+  position:absolute;right:0;top:0;z-index:1;
+  width:66%;height:100%;
+  object-fit:cover;object-position:44% 2%;
   filter:saturate(.94) contrast(1.02);
-  -webkit-mask-image:linear-gradient(180deg,#000 74%,transparent 100%);
-  mask-image:linear-gradient(180deg,#000 74%,transparent 100%);
+}
+.hero::after{
+  content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(90deg,#0b1322 24%,rgba(11,19,34,.70) 42%,rgba(11,19,34,0) 64%),
+    linear-gradient(to top,#0b1322 10%,rgba(11,19,34,.82) 28%,rgba(11,19,34,0) 50%);
 }
 .fv{position:relative;z-index:3;width:calc(100% - 32px);max-width:var(--max);margin-inline:auto}
 .fv-tag{margin:0;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.06em}
