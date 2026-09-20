@@ -115,8 +115,9 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 /* hero */
 .hero{
   position:relative;
-  min-height:calc(100svh - 58px);
-  padding:16px 0 104px;overflow:hidden;
+  display:flex;flex-direction:column;justify-content:space-between;
+  min-height:min(calc(100svh - 144px),640px);
+  padding:16px 0 20px;overflow:hidden;
   background:
     radial-gradient(circle at 76% 22%,rgba(201,184,146,.15),transparent 52%),
     linear-gradient(180deg,#16243c 0%,#0b1322 100%);
@@ -133,14 +134,14 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 .fv-tag{margin:0;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.06em}
 .fv-head{
   writing-mode:vertical-rl;
-  width:fit-content;height:clamp(320px,52svh,470px);
-  margin:18px 0 0;
+  width:fit-content;height:clamp(240px,45svh,420px);
+  margin:14px 0 0;
   font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
-  font-size:clamp(27px,10.2cqw,40px);font-weight:500;line-height:1.7;letter-spacing:.04em;
+  font-size:min(10.2cqw,4.2svh,39px);font-weight:500;line-height:1.7;letter-spacing:.04em;
   text-shadow:0 2px 24px rgba(8,14,26,.9);
 }
 .fv-head em{font-style:normal;color:var(--accent)}
-.fv-foot{position:relative;z-index:3;margin-top:14px}
+.fv-foot{position:relative;z-index:3;margin-top:12px}
 .fv-badge{
   display:inline-block;padding:7px 12px;
   border:1px solid rgba(201,184,146,.55);
