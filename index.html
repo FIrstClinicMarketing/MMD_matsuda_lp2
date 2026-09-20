@@ -123,16 +123,16 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
     linear-gradient(180deg,#16243c 0%,#0b1322 100%);
 }
 .hero-photo{
-  position:absolute;right:0;top:0;z-index:1;
-  width:66%;height:100%;
-  object-fit:cover;object-position:44% 2%;
+  position:absolute;right:-11%;bottom:0;z-index:1;
+  width:74%;height:84%;
+  object-fit:cover;object-position:38% 0;
   filter:saturate(.94) contrast(1.02);
+  -webkit-mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 6%,#000 12%);
+  mask-image:linear-gradient(90deg,transparent 0%,rgba(0,0,0,.55) 6%,#000 12%);
 }
 .hero::after{
   content:"";position:absolute;inset:0;z-index:2;pointer-events:none;
-  background:
-    linear-gradient(90deg,#0b1322 24%,rgba(11,19,34,.70) 42%,rgba(11,19,34,0) 64%),
-    linear-gradient(to top,#0b1322 10%,rgba(11,19,34,.82) 28%,rgba(11,19,34,0) 50%);
+  background:linear-gradient(to top,#0b1322 20%,rgba(11,19,34,.88) 30%,rgba(11,19,34,0) 48%);
 }
 .fv{position:relative;z-index:3;width:calc(100% - 32px);max-width:var(--max);margin-inline:auto}
 .fv-tag{margin:0;color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.06em}
@@ -154,10 +154,10 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
 }
 .fv-badge b{color:var(--accent);font-family:"Times New Roman",serif;font-size:19px;font-weight:500}
 .fv-sub{margin:11px 0 0;color:var(--muted);font-size:11.5px;line-height:1.7;text-shadow:0 2px 14px rgba(8,14,26,.85)}
-.fv-meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.fv-meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
 .fv-meta span{
-  padding:5px 10px;border:1px solid var(--line);border-radius:999px;
-  color:var(--muted);font-size:9.5px;letter-spacing:.04em;background:rgba(11,19,34,.55);
+  padding:4px 9px;border:1px solid var(--line);border-radius:999px;
+  color:var(--muted);font-size:9px;letter-spacing:.01em;white-space:nowrap;background:rgba(11,19,34,.55);
 }
 
 /* cases */
@@ -443,7 +443,7 @@ p,.lead,.contents-lead,.story-note,.hero-sub{text-wrap:pretty}
     <div class="fv-badge">クマ取り 通算執刀 <b>2,000</b> 件以上</div>
     <p class="fv-sub">脱脂・裏ハムラ・脂肪注入を、原因に合わせて使い分けます。</p>
     <div class="fv-meta">
-      <span>First Clinic 共同代表</span><span>年間クマ取り執刀 500件以上</span><span>六本木駅 徒歩1分</span>
+      <span>First Clinic 共同代表</span><span>年間クマ取り 500件以上</span><span>六本木駅 徒歩1分</span>
     </div>
   </div>
 </section>
