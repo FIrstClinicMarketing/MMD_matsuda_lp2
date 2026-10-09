@@ -20,7 +20,7 @@
   })(window,document,'script','dataLayer','GTM-NRQ37SP3');
 </script>
 <style>
-:root{--paper:#f7f5f0;--white:#fff;--ink:#20373b;--muted:#617074;--accent:#88775d;--line:#d9ded9;--serif:"Yu Mincho","Hiragino Mincho ProN","Noto Serif CJK JP",serif;--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP",sans-serif}
+:root{--paper:#1b1c1c;--white:#202121;--ink:#f1ede5;--muted:#bcbab3;--accent:#c6ae87;--line:#42423e;--serif:"Yu Mincho","Hiragino Mincho ProN","Noto Serif CJK JP",serif;--sans:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic","Noto Sans CJK JP",sans-serif}
 
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:32px}
@@ -197,7 +197,8 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #b6
 .price-value{font-size:25px}
 }
 
-@media(max-width:700px){body{padding-bottom:83px;font-size:14px}
+/* Keep the smartphone layout at every viewport width. */
+@media all{body{padding-bottom:83px;font-size:14px}
 .container{width:calc(100% - 40px)}
 .section{padding:66px 0}
 .topbar-inner{height:73px;gap:12px}
@@ -211,7 +212,7 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #b6
 .hero-content{max-width:none}
 .hero-eyebrow{font-size:9px;letter-spacing:.15em;margin-bottom:17px}
 .fv-tag{font-size:11px;margin-bottom:12px}
-.fv-head{font-size:clamp(30px,8.4vw,40px);line-height:1.7;letter-spacing:.06em;margin-bottom:20px}
+.fv-head{font-size:clamp(30px,8.4vw,36px);line-height:1.7;letter-spacing:.06em;margin-bottom:20px}
 .fv-sub{font-size:11px;max-width:190px;line-height:2;margin-bottom:0}
 .hero-doctor{margin-top:32px;padding-top:17px;width:135px;font-size:9px;line-height:1.8}
 .hero-doctor strong{font-size:23px}
@@ -279,6 +280,28 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #b6
 .backtop{width:34px;height:34px;bottom:88px;right:13px}
 .footer{font-size:9px}
 }
+
+/* Dark editorial palette and a centered, always-mobile canvas. */
+html{background:#101111;color-scheme:dark}
+body{background:#101111}
+#phone{width:100%;max-width:430px;margin-inline:auto;background:var(--paper);box-shadow:0 0 80px #0005;overflow:hidden}
+.hero{background:#222424}
+.hero:before{background:#292b2a}
+.hero-doctor{border-color:var(--line)}
+.hero-note{color:var(--muted)}
+.reasons,.clinic{background:#242525}
+.reason,.clinic-info,.info-row{border-color:var(--line)}
+.case-image,.doctor-photo{background:#292b29}
+.inline-cta{background:#2b2b28}
+.inline-cta.dark{background:#141616;color:var(--ink)}
+.dark p{color:var(--muted)}
+.nav-book,.hero-link,.final-button,.cta-reserve,.dark .inline-cta-button{background:#bda580;color:#171918!important;border-color:#bda580}
+.hero-link:hover,.nav-book:hover,.final-button:hover,.cta-reserve:hover,.inline-cta-button:hover{background:#d0ba96;color:#171918}
+.inline-cta-button{border-color:var(--accent)}
+.cta-reserve small{color:#30312c;border-color:#746952}
+.floating-cta{left:50%;right:auto;transform:translateX(-50%);width:100%;max-width:430px;background:rgba(25,27,26,.97);border-color:var(--line)}
+.backtop{right:max(13px,calc((100% - 430px)/2 + 13px));color:var(--ink)}
+.skip-link{background:#bda580;color:#171918}
 
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 *,*:before,*:after{transition:none!important;animation:none!important}
@@ -538,3 +561,4 @@ window.addEventListener('scroll',updateBacktop,{passive:true});updateBacktop();
 <noscript><style>.method-body{display:block}.method-plus{display:none}</style></noscript>
 </body>
 </html>
+
