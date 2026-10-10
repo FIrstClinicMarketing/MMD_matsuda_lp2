@@ -320,6 +320,35 @@ body{background:#101111}
 .fv-sub{max-width:calc(54% - 15px)}
 .doctor-photo img{object-position:center top}
 
+/* Original transparent portrait, framed as an editorial upper-body composition. */
+.hero{min-height:660px;padding:32px 24px 30px;background:radial-gradient(ellipse at 86% 73%,#383a36 0%,#242625 40%,#202222 75%)}
+.hero:before{inset:0;background:linear-gradient(90deg,#1d1f1e44,transparent 70%);pointer-events:none}
+.hero-photo{right:-24px;bottom:0;width:310px;height:350px;object-fit:cover;object-position:center top;mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 82%,transparent 100%)}
+.hero-content{position:relative}
+.hero-eyebrow{font-size:8px;letter-spacing:.18em;margin-bottom:17px}
+.fv-tag{font-size:11px;letter-spacing:.09em}
+.fv-head{font-size:34px;line-height:1.65;letter-spacing:.045em;margin-bottom:24px}
+.fv-sub{font-size:11px;max-width:165px;line-height:2}
+.hero-doctor{width:142px;margin-top:30px;padding-top:17px}
+.hero-doctor strong{font-size:24px;letter-spacing:.12em}
+.hero-link{margin-top:22px;padding:11px 12px;gap:10px}
+.hero-note{display:none}
+.doctor-photo-shell{width:100%;max-width:330px}
+.doctor-photo{background:radial-gradient(ellipse at 50% 35%,#42453f,#292c29 66%,#1b1c1c);border-bottom:1px solid #655b49}
+.doctor-photo img{aspect-ratio:1/1.08;object-fit:cover;object-position:center top;mask-image:linear-gradient(to bottom,#000 0%,#000 80%,transparent 100%);-webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 80%,transparent 100%)}
+.doctor-photo-shell:after{margin-top:14px;text-align:center;font-size:10px;letter-spacing:.25em}
+@media(max-width:374px){
+ .hero{padding-inline:20px;min-height:660px}
+ .fv-head{font-size:29px;line-height:1.7}
+ .hero-photo{width:260px;height:325px;right:-43px}
+ .fv-sub{max-width:149px;font-size:10px}
+ .hero-doctor{width:123px;margin-top:35px}
+ .hero-doctor strong{font-size:21px}
+ .hero-link{font-size:9px;padding:11px 10px;gap:5px}
+}
+
+
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 *,*:before,*:after{transition:none!important;animation:none!important}
 }
