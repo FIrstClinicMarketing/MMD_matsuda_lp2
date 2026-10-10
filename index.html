@@ -315,6 +315,11 @@ body{background:#101111}
 .cta-reserve small{font-size:8px;letter-spacing:.09em;padding-left:12px;color:#33352f;border-color:#827354}
 .cta-reserve:after{content:"↗";font-size:18px;line-height:1;margin-left:1px}
 
+/* Preserve the supplied portrait and keep its face clear of the hero copy. */
+.hero-photo{right:0;bottom:0;width:46%;height:430px;object-fit:cover;object-position:center top}
+.fv-sub{max-width:calc(54% - 15px)}
+.doctor-photo img{object-position:center top}
+
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}
 *,*:before,*:after{transition:none!important;animation:none!important}
 }
@@ -335,7 +340,7 @@ body{background:#101111}
 
 <main>
 <section class="hero" id="top">
-  <img class="hero-photo" src="source/doctor_matsuda_cut.webp" alt="First Clinic 松田裕太医師" width="848" height="1235" fetchpriority="high">
+  <img class="hero-photo" src="source/doctor-matsuda-standing-20261010.png" alt="First Clinic 松田裕太医師" width="567" height="1468" fetchpriority="high">
   <div class="hero-content">
     <p class="hero-eyebrow">FIRST CLINIC · EYE REJUVENATION</p>
     <p class="fv-tag">松田裕太医師のクマ取り・目元治療</p>
@@ -387,7 +392,7 @@ body{background:#101111}
 <section class="section doctor" id="doctor">
   <div class="container">
     <div class="doctor-photo-shell reveal">
-      <div class="doctor-photo"><img src="source/doctor_matsuda.webp" alt="松田裕太医師" width="720" height="1096" loading="lazy"></div>
+      <div class="doctor-photo"><img src="source/doctor-matsuda-standing-20261010.png" alt="松田裕太医師" width="567" height="1468" loading="lazy"></div>
     </div>
     <div class="doctor-copy reveal">
       <div class="doctor-role">FIRST CLINIC 共同代表</div>
@@ -567,4 +572,5 @@ window.addEventListener('scroll',updateBacktop,{passive:true});updateBacktop();
 <noscript><style>.method-body{display:block}.method-plus{display:none}</style></noscript>
 </body>
 </html>
+
 
