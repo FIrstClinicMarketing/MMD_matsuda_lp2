@@ -432,6 +432,25 @@ body{padding-bottom:92px}
 .cta-reserve:after{font-size:26px}
 .backtop{bottom:97px}
 @media(max-width:359px){.cta-reserve{padding-inline:15px;gap:10px}.cta-label{font-size:14px;letter-spacing:.005em}}
+
+/* Original publicity photo: only CSS framing and edge blending, no portrait retouching. */
+.hero-photo{top:30px;right:-31%;bottom:auto;width:175%;height:auto;max-width:none;object-fit:initial;object-position:initial;mask-image:linear-gradient(90deg,transparent 24%,#000 52%),linear-gradient(180deg,transparent 0%,#000 14%,#000 55%,transparent 88%);mask-composite:intersect;-webkit-mask-image:linear-gradient(90deg,transparent 24%,#000 52%),linear-gradient(180deg,transparent 0%,#000 14%,#000 55%,transparent 88%);-webkit-mask-composite:source-in}
+.hero:before{background:linear-gradient(180deg,transparent 0%,transparent 54%,rgba(10,23,40,.45) 70%,#0c192b 100%)}
+.hero:after{z-index:2;opacity:.10}
+/* Full viewport on phones, with the compact centered composition retained on desktop. */
+@media(max-width:767px){
+ #phone,.floating-cta{max-width:none;width:100%}
+ #phone{box-shadow:none}
+ .backtop{right:13px}
+ .hero{height:153.49vw;min-height:0;padding:0}
+ .hero-photo{top:6.98vw}
+ .fv-tag{left:5.6vw;top:3.7vw;right:4vw;font-size:4.88vw}
+ .fv-head{left:5.6vw;bottom:26.5vw;font-size:12.1vw}
+ .fv-sub{left:6vw;bottom:5.8vw;font-size:2.33vw}
+ .hero-doctor{left:6vw;top:22.8vw;width:28.4vw;font-size:2.1vw;padding-top:2.8vw}
+ .hero-doctor strong{font-size:5.35vw}
+ .hero-doctor span{font-size:1.86vw}
+}
 </style>
 </head>
 <body>
@@ -448,7 +467,7 @@ body{padding-bottom:92px}
 
 <main>
 <section class="hero" id="top">
-  <img class="hero-photo" src="source/doctor-matsuda-standing-20261010.png" alt="First Clinic 松田裕太医師" width="567" height="1468" fetchpriority="high">
+  <img class="hero-photo" src="doctor-matsuda-publicity-20261010.jpg" alt="First Clinic 松田裕太医師" width="1180" height="1380" fetchpriority="high">
   <div class="hero-content">
     <p class="hero-eyebrow">FIRST CLINIC · EYE REJUVENATION</p>
     <p class="fv-tag">松田裕太医師のクマ取り・目元治療</p>
@@ -714,6 +733,3 @@ if(carousel){
 <noscript><style>.case-controls,.case-count,.case-hint{display:none}.case-viewport{display:grid;gap:20px;overflow:visible}.method-body{display:block}.method-plus{display:none}</style></noscript>
 </body>
 </html>
-
-
-
